@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$ROOT_DIR/.build"
-APP_DIR="$BUILD_DIR/ScreenExposer.app"
+APP_DIR="$BUILD_DIR/screen-antisaver.app"
 MACOS_DIR="$APP_DIR/Contents/MacOS"
 
 mkdir -p "$MACOS_DIR"
@@ -12,7 +12,7 @@ swiftc \
   "$ROOT_DIR/main.swift" \
   "$ROOT_DIR/PowerManager.swift" \
   "$ROOT_DIR/ScreenKeepAwakeManager.swift" \
-  -o "$MACOS_DIR/ScreenExposer" \
+  -o "$MACOS_DIR/screen-antisaver" \
   -framework AppKit \
   -framework IOKit
 

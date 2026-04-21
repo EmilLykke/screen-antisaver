@@ -11,7 +11,7 @@ final class PowerManager {
     func preventDisplaySleep() {
         guard assertionID == 0 else { return }
 
-        let reason = "Screen Exposer is keeping the display awake" as CFString
+        let reason = "Screen Anti-Saver is keeping the display awake" as CFString
         let result = IOPMAssertionCreateWithName(
             kIOPMAssertionTypePreventUserIdleDisplaySleep as CFString,
             IOPMAssertionLevel(kIOPMAssertionLevelOn),

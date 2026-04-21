@@ -1,4 +1,4 @@
-# Screen Exposer
+# Screen Anti-Saver
 
 Small macOS menu bar app that keeps the display awake.
 
@@ -11,5 +11,5 @@ Build it:
 Run it:
 
 ```sh
-open .build/ScreenExposer.app
+open .build/screen-antisaver.app
 ```

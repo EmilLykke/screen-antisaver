@@ -5,7 +5,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let awakeManager = ScreenKeepAwakeManager.shared
     private var statusItem: NSStatusItem!
     private var toggleItem: NSMenuItem!
-    private let logURL = URL(fileURLWithPath: "/tmp/screen-exposer.log")
+    private let logURL = URL(fileURLWithPath: "/tmp/screen-anti-saver.log")
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         log("applicationDidFinishLaunching")
@@ -33,7 +33,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(.separator())
 
         let quitItem = NSMenuItem(
-            title: "Quit Screen Exposer",
+            title: "Quit Screen Anti-Saver",
             action: #selector(NSApplication.terminate(_:)),
             keyEquivalent: "q"
         )
@@ -64,7 +64,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         let symbolName = awakeManager.isEnabled ? "sun.max.fill" : "moon.zzz.fill"
         let configuration = NSImage.SymbolConfiguration(pointSize: 15, weight: .medium)
-        let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: "Screen Exposer")?
+        let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: "Screen Anti-Saver")?
             .withSymbolConfiguration(configuration)
 
         image?.isTemplate = true
@@ -73,7 +73,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         button.image = image
         button.imagePosition = .imageLeading
         button.contentTintColor = nil
-        button.toolTip = awakeManager.isEnabled ? "Screen Exposer: On" : "Screen Exposer: Off"
+        button.toolTip = awakeManager.isEnabled ? "Screen Anti-Saver: On" : "Screen Anti-Saver: Off"
         log("button updated with title: \(button.title)")
     }
 
